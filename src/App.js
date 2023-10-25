@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import PricingCode from './Components/PricingCode';
+import { pricings } from './utlis/constant';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+      <div className='row mt-4 pt-4'>
+       {
+        pricings.map((element)=>{
+          return  <PricingCode {...element}/>
+        })
+       }
+      </div>
+      </div>
     </div>
   );
 }
